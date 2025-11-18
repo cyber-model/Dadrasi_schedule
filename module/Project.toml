@@ -1,1 +1,21 @@
+name = "DadrasiSchedule"
+uuid = "369e34e7-b5c8-441c-9a73-4a66f64de4e5"
+authors = ["Sadeghi m767.sadeghi@gmail.com"]
+version = "1.1.3"
 
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+HiGHS = "87dc4568-4c63-4d18-b0c0-bb2238e4078b"
+#Ipopt = "b6b21f68-93f8-4de0-9bb3-e138108bb5d0"
+#Juniper = "2ddba703-00a4-53a7-87a5-e4f7c4dd8663"
+XLSX = "fdbf4ff8-1666-58a4-91e7-1b58723a45e0"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
+[compat]
+julia = "1.11.5"
