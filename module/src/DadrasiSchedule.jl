@@ -702,7 +702,7 @@ function Read_data(config::SchedulingConfig=DEFAULT_CONFIG)
     @info "Creating Prefered agents matrices-Gamma[c,n]"
     Gamma = zeros(length(C_Total), num_reps)
     for i in 1:length(C_Total)
-        if !isnothing(data[i,11])
+        if !ismissing(data[i,11])
             agents = parse.(Int, split(data[i,11],"-"))
             if !isempty(agents) && length(string(data[i,11])) > 8
                 try
