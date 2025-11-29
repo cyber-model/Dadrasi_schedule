@@ -659,7 +659,7 @@ function Read_data(config::SchedulingConfig=DEFAULT_CONFIG)
             tes = parse(Int, tes.match)
             if !isempty(tes)
                 try
-                    commenters = [parse(Int64,x) for x in split(data[i,9],"-") if !isempty(x)]
+                    commenters = [parse(Int64,x) for x in split(data[i,9],"-") if !isempty(x) && all(isdigit,x)]
                     for j in commenters
                         addreth = findfirst(x -> x==j, reps[:,2])
                         if !isnothing(addreth)
