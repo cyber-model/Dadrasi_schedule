@@ -164,14 +164,12 @@ function Read_data(config::SchedulingConfig=DEFAULT_CONFIG)
     #data = dropmissing(data)
     @info "Dropped missing values" before=initial_size after=nrow(data)
     
-    
+    data = sort(data, 5, rev=true)
+    @info "Data sorted by column 5 (descending)"
+	
     initial_size = nrow(data)
     data = data[1:min(5000, nrow(data)), :]    
     @info "Data truncated to top cases" original_size=initial_size final_size=nrow(data)
-   
-    
-    data = sort(data, 5, rev=true)
-    @info "Data sorted by column 5 (descending)"
     
     index_cases = copy(data[:,1])
     
@@ -1217,7 +1215,7 @@ function main_script(Data)
 			Case_IDs = Data.case_data[!, 1] .∈ [nominated_cases_IDs]
 			Case_IDs = findall(Case_IDs)			 
 
-			C_New_del = vcat(C_New_del,Case_IDs[1:min(Int(4*num_otagh*num_case),length(Case_IDs))])
+			C_New_del = vcat(C_New_del,Case_IDs[1:min(Int(round((2.3*num_otagh))),length(Case_IDs))])
 
 		    end
 		end
